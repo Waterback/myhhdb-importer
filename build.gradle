@@ -1,0 +1,43 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.wb.myhhdb'
+version = '0.0.2-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-aop')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.springframework.boot:spring-boot-starter-validation')
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.apache.camel:camel-core:2.18.0')
+	compile('org.apache.camel:camel-spring-boot:2.18.0')
+	compile('org.apache.camel:camel-jpa:2.18.0')
+	compile('org.apache.camel:camel-kafka:2.18.0')
+	runtime('org.postgresql:postgresql')
+	compile('javax.xml.bind:jaxb-api')
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
